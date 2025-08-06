@@ -10,7 +10,6 @@
   --chocolate-brown: #734924;
 
   /* Light mode defaults */
-  --background: var(--warm-beige);
   --foreground: var(--deep-navy);
   --card-background: #fdfcfa;
   --accent: var(--burnt-orange);
