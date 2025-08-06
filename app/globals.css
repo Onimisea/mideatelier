@@ -1,93 +1,26 @@
 @import "tailwindcss";
 
-/* Earthy-Luxe Brand Color Variables */
 :root {
-  /* Primary Brand Colors */
-  --deep-navy: #011c40;
-  --muted-gold: #f2dc6d;
-  --burnt-orange: #bf6b04;
-  --warm-beige: #d9cdbf;
-  --chocolate-brown: #734924;
-
-  /* Light mode defaults */
-  --foreground: var(--deep-navy);
-  --card-background: #fdfcfa;
-  --accent: var(--burnt-orange);
-  --muted: var(--chocolate-brown);
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @theme inline {
-  --breakpoint-*: initial;
-  --breakpoint-sm: 480px;
-  --breakpoint-sm2: 568px;
-  --breakpoint-sm3: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-md2: 840px;
-  --breakpoint-md3: 960px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-lg2: 1280px;
-  --breakpoint-xl: 1440px;
-  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-deep-navy: var(--deep-navy);
-  --color-muted-gold: var(--muted-gold);
-  --color-burnt-orange: var(--burnt-orange);
-  --color-warm-beige: var(--warm-beige);
-  --color-chocolate-brown: var(--chocolate-brown);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-
-
-  --font-geist: var(--geist);
-  --font-playfair: var(--playfair);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--deep-navy);
-    --foreground: var(--warm-beige);
-    --card-background: #001133;
-    --accent: var(--muted-gold);
-    --muted: var(--burnt-orange);
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
 }
 
-* {
-  scroll-behavior: smooth;
-}
-
-
-/* Elegant shadows using brand colors */
-.luxury-shadow {
-  box-shadow: 0 4px 6px rgba(1, 28, 64, 0.12), 0 2px 4px rgba(1, 28, 64, 0.08);
-}
-
-.luxury-shadow-lg {
-  box-shadow: 0 10px 15px rgba(1, 28, 64, 0.12), 0 4px 6px rgba(1, 28, 64, 0.08);
-}
-
-/* Gradient backgrounds for luxury feel */
-.gradient-navy-gold {
-  background: linear-gradient(
-    135deg,
-    var(--deep-navy) 0%,
-    var(--muted-gold) 100%
-  );
-}
-
-.gradient-warm-earth {
-  background: linear-gradient(
-    135deg,
-    var(--warm-beige) 0%,
-    var(--chocolate-brown) 100%
-  );
-}
-
-.gradient-sunset {
-  background: linear-gradient(
-    135deg,
-    var(--burnt-orange) 0%,
-    var(--muted-gold) 100%
-  );
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
