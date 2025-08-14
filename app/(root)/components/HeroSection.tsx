@@ -55,7 +55,7 @@ const HeroSection = () => {
       className="relative w-full h-screen overflow-hidden top-0 left-0"
       variants={containerVariants}
       initial="initial"
-      animate="animate"
+      animate="animate" 
     >
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -68,7 +68,7 @@ const HeroSection = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div className="absolute inset-0 bg-black/80" />
+      <div className="absolute inset-0 bg-deep-navy/80" />
 
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center w-[90%] max-w-4xl mx-auto flex flex-col gap-10 sm2:gap-12 md:gap-16 ">
