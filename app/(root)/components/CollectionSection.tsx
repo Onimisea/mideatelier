@@ -30,40 +30,7 @@ const shuffleArray = (array: number[]) => {
 };
 
 const CollectionSection = () => {
-  // const [rotationIndex, setRotationIndex] = useState(0);
-  // Auto-rotate positions every 3 seconds
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setRotationIndex((prev) => (prev + 1) % 6);
-  //   }, 5000);
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // // Calculate new order based on rotation
-  // // Card movement pattern: 1→3, 3→4, 4→2, 2→1
-  // const getRotatedCards = () => {
-  //   const positions = [0, 1, 2, 3]; // Original positions
-
-  //   // Apply rotation pattern based on rotationIndex
-  //   for (let i = 0; i < rotationIndex; i++) {
-  //     const temp = [...positions];
-  //     positions[2] = temp[0]; // Card 1 → position 3
-  //     positions[3] = temp[2]; // Card 3 → position 4
-  //     positions[1] = temp[3]; // Card 4 → position 2
-  //     positions[0] = temp[1]; // Card 2 → position 1
-  //   }
-
-  //   // Create new array with cards in rotated positions
-  //   const rotated = new Array(4);
-  //   positions.forEach((originalIndex, newIndex) => {
-  //     rotated[newIndex] = cards[originalIndex];
-  //   });
-
-  //   return rotated;
-  // };
-
-  // const rotatedCards = getRotatedCards();
+  
 
   const cards = useMemo(() => {
     return [

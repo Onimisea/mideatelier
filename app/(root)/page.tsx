@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import AboutMide from "./components/AboutMide";
 import CollectionSection from "./components/CollectionSection";
+import DealSection from "./components/DealSection";
 
 export const metadata: Metadata = {
   title: "Mide's Atelier | Luxurious Couture Brand",
@@ -22,6 +23,7 @@ export default function Home() {
         <HeroSection />
         <AboutMide />
         <CollectionSection />
+        <DealSection />
       </div>
 
       <Footer />
