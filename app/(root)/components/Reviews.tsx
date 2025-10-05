@@ -104,14 +104,14 @@ const Reviews = () => {
     <div className="relative z-10 flex items-center justify-center h-full bg-muted-gold/80 py-28">
       <RiDoubleQuotesL
         size={120}
-        className="absolute top-10 left-30 text-4xl text-burnt-orange opacity-50"
+        className="absolute top-10 md:left-30 text-4xl text-burnt-orange opacity-50"
       />
       <RiDoubleQuotesR
         size={120}
-        className="absolute bottom-10 right-30 text-4xl text-burnt-orange opacity-50"
+        className="absolute bottom-10 md:right-30 text-4xl text-burnt-orange opacity-50"
       />
-      <div className="w-[90%] md:w-[80%] lg:w-[60%] lg2:w-[50%] max-w-[1440px] mx-auto relative flex flex-col items-center justify-center overflow-hidden gap-6 ">
-        <h2 className="font-playfair text-4xl flex gap-2 items-center">
+      <div className="w-[90%] md:w-[80%] lg:w-[60%] lg2:w-[50%] max-w-[1440px] mx-auto relative flex flex-col items-center justify-center overflow-hidden gap-6 my-12">
+        <h2 className="font-playfair text-4xl flex flex-wrap gap-2 items-center justify-center">
           <span className="text-deep-navy font-semibold">What</span>
           <span className="text-burnt-orange font-bold">Our Clients</span>
           <span className="text-deep-navy font-semibold">Says</span>
@@ -150,7 +150,7 @@ const Reviews = () => {
                       alt={review.full_name}
                       width={500}
                       height={300}
-                      className="w-full h-[400px] object-cover object-center rounded-lg"
+                      className="w-full md:h-[400px] object-cover object-center rounded-lg"
                     />
 
                     <div className="bg-gradient-to-t from-black via-black/60 to-transparent h-[150px] w-full absolute bottom-0 left-0 flex flex-col justify-end px-6 gap-1">
@@ -165,8 +165,8 @@ const Reviews = () => {
                     </div>
                   </div>
 
-                  <div className="rounded-lg w-full md:w-[50%] text-white">
-                    <div className="flex flex-col items-center justify-center mr-8">
+                  <div className="rounded-lg w-full md:w-[50%] text-white text-center">
+                    <div className="flex flex-col items-center justify-center mr-8 pb-10 px-6">
                       <p className=" text-center">{review.comment}</p>
 
                       {review.rating && (
