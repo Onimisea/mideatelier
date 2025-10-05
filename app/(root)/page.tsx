@@ -6,6 +6,7 @@ import HeroSection from "./components/HeroSection";
 import AboutMide from "./components/AboutMide";
 import CollectionSection from "./components/CollectionSection";
 import DealSection from "./components/DealSection";
+import Reviews from "./components/Reviews";
 
 export const metadata: Metadata = {
   title: "Mide's Atelier | Luxurious Couture Brand",
@@ -22,6 +23,7 @@ export default function Home() {
       <div className="flex-1">
         <HeroSection />
         <AboutMide />
+        <Reviews />
         <CollectionSection />
         <DealSection />
       </div>
