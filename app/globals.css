@@ -145,3 +145,27 @@
     scroll-behavior: smooth;
   }
 }
+
+/* Base scrollbar width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; /* for horizontal scrollbars */
+}
+
+/* Scrollbar track (background area) */
+::-webkit-scrollbar-track {
+  background: #0f0f0f; /* deep black background */
+  border-radius: 8px;
+}
+
+/* Scrollbar thumb (the draggable handle) */
+::-webkit-scrollbar-thumb {
+  background: #bf6b04;
+  border-radius: 8px;
+  border: 2px solid #0f0f0f; /* adds contrast and padding illusion */
+}
+
+/* Hover state for thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #f2dc6d;
+}

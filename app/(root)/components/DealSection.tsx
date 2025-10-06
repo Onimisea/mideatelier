@@ -3,8 +3,8 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import CountdownTimer from "@/components/CountdownTimer";
+import BookNow from "./BookNow";
 
 const buttonVariants = {
   initial: {
@@ -33,18 +33,22 @@ const DealSection = () => {
             <p className="text-[#626262]">
               Designed for the modern woman who appreciates quality and style.
             </p>
+
             <motion.div variants={buttonVariants}>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center "
+                className=""
               >
-                <Link
-                  href="/#book-now"
-                  className="bg-deep-navy hover:bg-muted-gold text-white hover:text-deep-navy hover:border hover:border-deepbg-deep-navy px-10 py-2 text-lg rounded-full shadow-lg transition-all duration-300 hover:shadow-deepbg-deep-navy/50 flex w-fit"
-                >
-                  Book Now
-                </Link>
+                <BookNow
+                  triggerButtonClassName="bg-burnt-orange hover:bg-deep-navy text-white px-10 py-6 text-lg rounded-full shadow-lg transition-all duration-300 hover:shadow-burnt-orange/70 flex items-center gap-1"
+                  firstText="Book"
+                  firstTextClassName=""
+                  secondText="Now"
+                  secondTextClassName=""
+                  thirdText=""
+                  thirdTextClassName=""
+                />
               </motion.div>
             </motion.div>
           </div>

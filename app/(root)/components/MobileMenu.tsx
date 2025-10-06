@@ -1,17 +1,18 @@
 "use client";
 
-import { ChevronDown, X } from "lucide-react";
+import { X } from "lucide-react";
 import { RiWhatsappFill, RiInstagramFill, RiTiktokFill } from "react-icons/ri";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAppStore } from "@/store";
+import BookNow from "./BookNow";
 
 export default function MobileMenu() {
   const { isMobileNavOpen, setMobileNavOpen } = useAppStore();
 
-  const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
+  // const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function MobileMenu() {
       // Check if viewport is md and above (768px)
       if (window.innerWidth >= 768) {
         setMobileNavOpen(false);
-        setIsCollectionsOpen(false);
+        // setIsCollectionsOpen(false);
       }
     };
 
@@ -48,9 +49,9 @@ export default function MobileMenu() {
     };
   }, [isMobileNavOpen, setMobileNavOpen]);
 
-  const toggleCollections = () => {
-    setIsCollectionsOpen(!isCollectionsOpen);
-  };
+  // const toggleCollections = () => {
+  //   setIsCollectionsOpen(!isCollectionsOpen);
+  // };
 
   // Animation variants
   const backdropVariants = {
@@ -177,61 +178,61 @@ export default function MobileMenu() {
     },
   };
 
-  const dropdownVariants = {
-    hidden: {
-      opacity: 0,
-      height: 0,
-      y: -20,
-    },
-    visible: {
-      opacity: 1,
-      height: "auto",
-      y: 0,
-      transition: {
-        type: "spring" as const,
-        damping: 25,
-        stiffness: 300,
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
-    },
-    exit: {
-      opacity: 0,
-      height: 0,
-      y: -20,
-      transition: {
-        duration: 0.3,
-        staggerChildren: 0.05,
-        staggerDirection: -1,
-      },
-    },
-  };
+  // const dropdownVariants = {
+  //   hidden: {
+  //     opacity: 0,
+  //     height: 0,
+  //     y: -20,
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     height: "auto",
+  //     y: 0,
+  //     transition: {
+  //       type: "spring" as const,
+  //       damping: 25,
+  //       stiffness: 300,
+  //       staggerChildren: 0.1,
+  //       delayChildren: 0.1,
+  //     },
+  //   },
+  //   exit: {
+  //     opacity: 0,
+  //     height: 0,
+  //     y: -20,
+  //     transition: {
+  //       duration: 0.3,
+  //       staggerChildren: 0.05,
+  //       staggerDirection: -1,
+  //     },
+  //   },
+  // };
 
-  const dropdownItemVariants = {
-    hidden: {
-      x: -20,
-      opacity: 0,
-      scale: 0.9,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring" as const,
-        damping: 20,
-        stiffness: 300,
-      },
-    },
-    exit: {
-      x: 20,
-      opacity: 0,
-      scale: 0.9,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
+  // const dropdownItemVariants = {
+  //   hidden: {
+  //     x: -20,
+  //     opacity: 0,
+  //     scale: 0.9,
+  //   },
+  //   visible: {
+  //     x: 0,
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: {
+  //       type: "spring" as const,
+  //       damping: 20,
+  //       stiffness: 300,
+  //     },
+  //   },
+  //   exit: {
+  //     x: 20,
+  //     opacity: 0,
+  //     scale: 0.9,
+  //     transition: {
+  //       duration: 0.2,
+  //     },
+  //   },
+  // };
 
   const socialVariants = {
     hidden: {
@@ -370,78 +371,19 @@ export default function MobileMenu() {
                 {/* Navigation Links */}
                 <nav className="flex flex-col items-center space-y-3 mb-6">
                   <motion.div variants={navItemVariants}>
-                    <Link href="/" className="group relative overflow-hidden">
+                    <Link
+                      href="/"
+                      className="group relative overflow-hidden text-muted-gold hover:text-burnt-orange duration-300 transition-all hover:font-semibold"
+                    >
                       Home
                     </Link>
                   </motion.div>
 
-                  {/* Collections Dropdown */}
-                  <motion.div
-                    className="group relative"
-                    variants={navItemVariants}
-                  >
-                    <motion.button
-                      onClick={toggleCollections}
-                      className="flex items-center space-x-2 group-hover:text-muted-gold transition-colors duration-500"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span className="text-lg font-playfair font-light text-warm-beige tracking-wide">
-                        Collections
-                      </span>
-                      <motion.div
-                        animate={{ rotate: isCollectionsOpen ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ChevronDown className="w-3 h-3 text-muted-gold" />
-                      </motion.div>
-                    </motion.button>
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-muted-gold group-hover:w-full transition-all duration-700 ease-out"></div>
-
-                    {/* Collections Submenu */}
-                    <AnimatePresence>
-                      {isCollectionsOpen && (
-                        <motion.div
-                          className="mt-2 space-y-1"
-                          variants={dropdownVariants}
-                          initial="hidden"
-                          animate="visible"
-                          exit="exit"
-                        >
-                          {[
-                            { href: "/collections/bridals", label: "Bridals" },
-                            {
-                              href: "/collections/corporate",
-                              label: "Corporate",
-                            },
-                            { href: "/collections/bespoke", label: "Bespoke" },
-                            {
-                              href: "/collections/ready-to-wear",
-                              label: "Ready To Wear",
-                            },
-                          ].map((item) => (
-                            <motion.div
-                              key={item.href}
-                              variants={dropdownItemVariants}
-                            >
-                              <Link
-                                href={item.href}
-                                className="block text-center group relative hover:bg-muted-gold/10 rounded-lg py-1 px-3 transition-all duration-300"
-                              >
-                                Collections
-                              </Link>
-                            </motion.div>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-
-                  {["Lookbook", "About", "Blog", "Contact"].map((item) => (
+                  {["Gallery", "Login", "Register"].map((item) => (
                     <motion.div key={item} variants={navItemVariants}>
                       <Link
                         href={`/${item.toLowerCase()}`}
-                        className="group relative overflow-hidden"
+                        className="group relative overflow-hidden text-muted-gold hover:text-burnt-orange duration-300 transition-all hover:font-semibold"
                       >
                         {item}
                       </Link>
@@ -449,16 +391,17 @@ export default function MobileMenu() {
                   ))}
                 </nav>
 
-                {/* CTA Button */}
-                <Link
-                  href="/book-now"
-                  className="group relative overflow-hidden bg-muted-gold hover:bg-burnt-orange text-deep-navy hover:text-white font-playfair font-medium py-2 px-5 rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl mb-6"
-                >
-                  <span className="relative z-10 text-sm tracking-wide">
-                    Book Consultation
-                  </span>
-                  <div className="absolute inset-0 bg-burnt-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                </Link>
+                <div className="mb-6">
+                  <BookNow
+                    triggerButtonClassName="bg-burnt-orange hover:bg-muted-gold text-white hover:text-deep-navy px-10 py-6 text-lg rounded-full shadow-lg transition-all duration-300 hover:shadow-burnt-orange/70 gap-1"
+                    firstText="Book"
+                    firstTextClassName=""
+                    secondText="Now"
+                    secondTextClassName=""
+                    thirdText=""
+                    thirdTextClassName=""
+                  />
+                </div>
 
                 {/* Social Media Icons */}
                 <motion.div

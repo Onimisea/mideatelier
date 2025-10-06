@@ -2,8 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-// import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import BookNow from "./BookNow";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -55,7 +54,7 @@ const HeroSection = () => {
       className="relative w-full h-screen overflow-hidden top-0 left-0"
       variants={containerVariants}
       initial="initial"
-      animate="animate" 
+      animate="animate"
     >
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -97,16 +96,15 @@ const HeroSection = () => {
               whileTap={{ scale: 0.95 }}
               className="flex items-center justify-center"
             >
-              <Link
-                href="/#book-now"
-                className="mt-6 bg-muted-gold hover:bg-transparent text-black hover:text-muted-gold hover:border hover:border-muted-gold px-10 py-4 text-lg rounded-full shadow-lg transition-all duration-300 hover:shadow-muted-gold/50 flex w-fit"
-              >
-                Book{" "}
-                <span className="hidden sm:flex items-center mx-1">
-                  Consultation
-                </span>{" "}
-                Now
-              </Link>
+              <BookNow
+                triggerButtonClassName="mt-6 bg-muted-gold hover:bg-transparent text-black hover:text-muted-gold hover:border hover:border-muted-gold px-10 py-7 text-lg rounded-full shadow-lg transition-all duration-300 hover:shadow-muted-gold/50 flex items-center gap-1"
+                firstText="Book"
+                firstTextClassName=""
+                secondText="Free"
+                secondTextClassName="hidden sm:flex"
+                thirdText="Consultation"
+                thirdTextClassName=""
+              />
             </motion.div>
           </motion.div>
         </div>
