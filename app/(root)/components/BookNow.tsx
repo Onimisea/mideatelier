@@ -298,7 +298,7 @@ const BookNow: React.FC<BookNowProps> = ({
                   control={form.control}
                   name="service_type"
                   render={({ field }) => (
-                    <FormItem className="w-[48%]">
+                    <FormItem className=" w-full sm2:w-[40%]">
                       <FormLabel className="text-deep-navy">
                         Service Type
                       </FormLabel>
@@ -372,7 +372,7 @@ const BookNow: React.FC<BookNowProps> = ({
                   control={form.control}
                   name="preferred_datetime"
                   render={({ field }) => (
-                    <FormItem className="flex flex-col w-full">
+                    <FormItem className="flex flex-col w-full sm2:w-[60%]">
                       <FormLabel className="text-deep-navy">
                         Preferred Date & Time
                       </FormLabel>
